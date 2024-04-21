@@ -30,14 +30,28 @@
     <div class="promo6">
         <div class="top2">
             <div class="top2-1">
-                <?php echo "<h3 style='color:teal; font-size:2rem; font-weight:900; margin-top: 5px; margin-left: 10px'> Promotion " . $activedPromo . "</h3>" ?>
+                <?php echo "<h3 style='color:teal; font-size:2rem; font-weight:900; margin-top: 5px; margin-left: 30px;'>Promotion " . $activedPromo . "</h3>" ?>
                 <!-- <h3 style="color: teal;font-weight: 900;margin-top: 5px;margin-left: 10px;">Promotion 6</h3> -->
             </div>
 
             <div class="top2-2">
-                <h2>Référentiel: </h2>
+                <!-- <h2>Référentiel: </h2> -->
                 <!-- <h3 style="color: teal;font-weight: 900;margin-top: 5px;margin-left: 10px;">Dev Web/mobile</h3> -->
-                <?php echo "<h3 style='color: teal; font-size:2rem ;font-weight:900; margin-top:5px; margin-left: 10px;'>" . $valueRef . "</h3>"; ?>
+                <?php echo "<h3 style='color: tomato; font-size:2rem ;font-weight:900; margin-left: -80%;'>Référentiel: " . $valueRef . "</h3>"; ?>
+            </div>
+
+            <div class="top2-3">
+                <form method="post">
+                    <label for="Dev-Web">Dev-web</label>
+                    <input type="checkbox" name="Dev-Web" id="Dev-Web" class="refCheck" value="Dev-Web">
+
+                    <label for="Dev-Data">Dev-data</label>
+                    <input type="checkbox" name="Dev-Data" id="Dev-Data" class="refCheck" value="Dev-Data"> <br>
+
+                    <label for="Ref-Dig">Ref-dig</label>
+                    <input type="checkbox" name="Ref-Dig" id="Ref-Dig" class="refCheck" value="Ref-Dig">
+
+                <!-- </form> -->
             </div>
 
         </div>

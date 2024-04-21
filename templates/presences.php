@@ -13,11 +13,17 @@
 
 
     <?php require_once ("../functions/gestionPresences.php") ?>
+
     <?php session_start();
+
     if (isset($_SESSION["activePromo"])) {
         $active = $_SESSION["activePromo"];
     }
+    if (isset($_SESSION['connectedUser'])) {
+        $connectedUser = $_SESSION['connectedUser'];
+    }
     ?>
+
     <!--  -->
     <!--PARTIE CONTENU-DROITE  -->
     <div class="right-contain">
@@ -26,7 +32,8 @@
 
         <div class="active-page">
             <div>
-                <h5 class="promotion">Présences</h5>
+                <h5 class="promotion">Présences</h5> <br>
+                <?php echo "<h2>Connected: " . $connectedUser["nom"] . "</h2>" ?>
             </div>
             <div>
                 <?php echo "<h2 class='runningPromo'>Promo: " . $active . "</h2>" ?>
@@ -40,7 +47,7 @@
 
 
             <div class="filter">
-                <form action = "" method="post">
+                <form action="" method="post">
                     <div>
                         <select class="status" name="optionsStatus" id="optionsStatus">
                             <!-- onchange="this.form.submit()" -->
@@ -60,7 +67,7 @@
                         </select>
                     </div>
 
-                    
+
 
                     <div>
                         <input type="date" name="jour" id="jour" value="10/02/2020" />

@@ -6,7 +6,21 @@ session_start();
 if (isset($_SESSION["activePromo"])) {
     $activedPromo = $_SESSION["activePromo"];
 }
+
+// Recupérer la valeur du référentiel dans l'URL
 $valueRef = $_GET['value'];
+// Convertir en miniscule la valeur:
+$valeurRefMin = strtolower($valueRef);
+
+// Déclarer le tableau de stockage des référentiels:
+$tabRef = [];
+array_push($tabRef, $valueRef);
+
+// Mettre tous les éléments du tableau en minuscule:
+// $tabRefMin = array_map('strtolower', $tabRef);
+
+// Insérer le référentiel dans le tableau ref:
+// array_push($tabRefMin, $valeurRefMin);
 
 
 // RECUPERATION DU RÉFÉRENTIEL SUR L'URL:
@@ -240,7 +254,7 @@ $apprenants = [
 // 
 $searchedRef = $_POST["nomRef"];
 $foundedRef = null;
-$tabEtud = [];
+$tabEtud = [$valueRef];
 foreach ($apprenants as $apprenant) {
     if ($apprenant['referentiel'] == $searchedRef) {
         $tabEtud[] = $apprenant;
@@ -253,6 +267,50 @@ $_SESSION['nbApprenants'] = count($apprenants);
 echo "<div class='global'>";
 
 
+if (!empty(($valueRef))) {
+    foreach ($apprenants as $apprenant) {
+        // if ($apprenant['promo'] == $activedPromo && $apprenant['referentiel'] == $valueRef) {
+        if ($apprenant['promo'] == $activedPromo && in_array($apprenant['referentiel'], $tabRef)) {
+
+            echo "<div class='infos-promos'>";
+            echo "<ul>";
+            echo "<li class='donnees1'>";
+            echo "<img class='profilEtudiant' src=" . $apprenant['profil'] . ">";
+            // echo "<img src='../public/images/tete.png' class='profilEtudiant' alt='profil'>";
+            echo "<p class='nomEtudiant' style='font-size:1.2rem'>" . $apprenant['nom'] . "</p>";
+            echo "<p class='prenomEtudiant' style='font-size:1.2rem'>" . $apprenant['prenom'] . "</p>";
+            echo "<p class='refEtudiant' style='font-size:1.2rem'>" . $apprenant['referentiel'] . "</p>";
+            echo "<p class='emailEtudiant' style='font-size:1.2rem'>" . $apprenant['email'] . "</p>";
+            echo "<p class='genreEtudiant' style='font-size:1.2rem'>" . $apprenant['genre'] . "</p>";
+            echo "<p class='telEtudiant' style='font-size:1.2rem'>" . $apprenant['tel'] . "</p>";
+            echo "<input type='checkbox' class='action'></input>";
+            echo "</li>";
+            echo "</ul>";
+            echo "</div>";
+        }
+    }
+} else {
+    foreach ($apprenants as $apprenant) {
+        echo "<div class='infos-promos'>";
+        echo "<ul>";
+        echo "<li class='donnees1'>";
+        echo "<img class='profilEtudiant' src=" . $apprenant['profil'] . ">";
+        // echo "<img src='../public/images/tete.png' class='profilEtudiant' alt='profil'>";
+        echo "<p class='nomEtudiant' style='font-size:1.2rem'>" . $apprenant['nom'] . "</p>";
+        echo "<p class='prenomEtudiant' style='font-size:1.2rem'>" . $apprenant['prenom'] . "</p>";
+        echo "<p class='refEtudiant' style='font-size:1.2rem'>" . $apprenant['referentiel'] . "</p>";
+        echo "<p class='emailEtudiant' style='font-size:1.2rem'>" . $apprenant['email'] . "</p>";
+        echo "<p class='genreEtudiant' style='font-size:1.2rem'>" . $apprenant['genre'] . "</p>";
+        echo "<p class='telEtudiant' style='font-size:1.2rem'>" . $apprenant['tel'] . "</p>";
+        echo "<input type='checkbox' class='action'></input>";
+        echo "</li>";
+        echo "</ul>";
+        echo "</div>";
+
+    }
+}
+
+echo "</div>";
 // if ($foundedRef != null && $foundedRef['promo'] == $activedPromo) {
 //     echo "<div class='infos-promos'>";
 //     echo "<ul>";
@@ -270,27 +328,19 @@ echo "<div class='global'>";
 //     echo "</div>";
 // }
 // 
-// else {
-foreach ($apprenants as $apprenant) {
-    if ($apprenant['promo'] == $activedPromo && $apprenant['referentiel'] == $valueRef) {
+?>;
+<!-- <script>
+    window.onload = function () {
+        var checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
-        echo "<div class='infos-promos'>";
-        echo "<ul>";
-        echo "<li class='donnees1'>";
-        echo "<img class='profilEtudiant' src=" . $apprenant['profil'] . ">";
-        // echo "<img src='../public/images/tete.png' class='profilEtudiant' alt='profil'>";
-        echo "<p class='nomEtudiant' style='font-size:1.2rem'>" . $apprenant['nom'] . "</p>";
-        echo "<p class='prenomEtudiant' style='font-size:1.2rem'>" . $apprenant['prenom'] . "</p>";
-        echo "<p class='refEtudiant' style='font-size:1.2rem'>" . $apprenant['referentiel'] . "</p>";
-        echo "<p class='emailEtudiant' style='font-size:1.2rem'>" . $apprenant['email'] . "</p>";
-        echo "<p class='genreEtudiant' style='font-size:1.2rem'>" . $apprenant['genre'] . "</p>";
-        echo "<p class='telEtudiant' style='font-size:1.2rem'>" . $apprenant['tel'] . "</p>";
-        echo "<input type='checkbox' class='action'></input>";
-        echo "</li>";
-        echo "</ul>";
-        echo "</div>";
-    }
-}
-// }
-echo "</div>";
-
+        for (var i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].addEventListener("change", function () {
+                if (this.checked) {
+                    var checkboxValue = this.value;
+                    console.log("Le checkbox a été coché. Valeur : " + checkboxValue);
+                    // Ici, vous pouvez envoyer la valeur vers votre script PHP si nécessaire.
+                }
+            });
+        }
+    };
+</script> -->

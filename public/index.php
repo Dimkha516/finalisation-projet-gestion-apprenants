@@ -2,7 +2,6 @@
 // http://localhost:8089/architecture/public/index.php
 //include("../models/login.php");
 
-
 // IMPORTATIONS DES FONCTIONS:
 
 // APPEL DE BAR DE NAVIGATION:
@@ -19,6 +18,9 @@ include_once("../templates/sideBar.php");
 // APPEL PIED DE PAGE
 include("../templates/footer.php");
 
+// DÉMARRER LA SESSION POUR L'UTILISATEUR CONNECTÉ:
+// session_start();
+// $_SESSION['connectedUser'] = [];
 
 
 // DÉFINITION DE LA SESSION POUR LA PROMO ACTIVÉE:
@@ -68,7 +70,7 @@ include("../templates/footer.php");
 //Traiter le choix de l'image
 //Enlever les espaces pendant la saisie des fonctions php le font. Et convertir tout soit en miniscule soit en majiscule des fonctions PHP le font
 
-//5) Tache facultatif: Création Promo
+//5) Tache facultatif: Création Promo ==> POUR LES NDANDANE...
 //--------- Le libellé doit être unique.
 //--------- une poromo doit durer minimum 4 mois.
 //*-------------------------------------------/

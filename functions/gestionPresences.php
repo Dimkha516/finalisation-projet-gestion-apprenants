@@ -88,7 +88,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Web",
             "heure" => "07:40",
             "status" => "Present",
-            "date" => "20/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 8,
@@ -99,7 +99,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Data",
             "heure" => "08:40",
             "status" => "Retard",
-            "date" => "20/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 9,
@@ -110,7 +110,7 @@ function presencesDisplay()
             "referenciel" => "Ref-Dig",
             "heure" => "08:05",
             "status" => "Present",
-            "date" => "19/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 10,
@@ -121,7 +121,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Web",
             "heure" => "vide",
             "status" => "Absent",
-            "date" => "19/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 11,
@@ -132,7 +132,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Web",
             "heure" => "07:10",
             "status" => "Present",
-            "date" => "20/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 12,
@@ -143,7 +143,7 @@ function presencesDisplay()
             "referenciel" => "Ref-Dig",
             "heure" => "07:30",
             "status" => "Present",
-            "date" => "20/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 13,
@@ -154,7 +154,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Data",
             "heure" => "07:55",
             "status" => "Present",
-            "date" => "20/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 10,
@@ -165,7 +165,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Web",
             "heure" => "-",
             "status" => "Absent",
-            "date" => "20/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 11,
@@ -176,7 +176,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Web",
             "heure" => "07:10",
             "status" => "Present",
-            "date" => "20/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 12,
@@ -187,7 +187,7 @@ function presencesDisplay()
             "referenciel" => "Ref-Dig",
             "heure" => "07:30",
             "status" => "Present",
-            "date" => "20/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 13,
@@ -198,7 +198,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Data",
             "heure" => "07:55",
             "status" => "Present",
-            "date" => "20/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 130,
@@ -209,7 +209,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Data",
             "heure" => "07:55",
             "status" => "Absent",
-            "date" => "19/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 13,
@@ -220,7 +220,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Data",
             "heure" => "07:55",
             "status" => "Retard",
-            "date" => "20/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 11,
@@ -231,7 +231,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Web",
             "heure" => "07:10",
             "status" => "Present",
-            "date" => "17/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 12,
@@ -242,7 +242,7 @@ function presencesDisplay()
             "referenciel" => "Ref-Dig",
             "heure" => "07:30",
             "status" => "Present",
-            "date" => "19/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 12,
@@ -253,7 +253,7 @@ function presencesDisplay()
             "referenciel" => "Ref-Dig",
             "heure" => "08:00",
             "status" => "Present",
-            "date" => "19/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 12,
@@ -264,7 +264,7 @@ function presencesDisplay()
             "referenciel" => "Ref-Dig",
             "heure" => "08:20",
             "status" => "Retard",
-            "date" => "20/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 12,
@@ -275,7 +275,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Web",
             "heure" => "07:18",
             "status" => "Present",
-            "date" => "20/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 12,
@@ -286,7 +286,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Web",
             "heure" => "vide",
             "status" => "Absent",
-            "date" => "20/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 12,
@@ -297,7 +297,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Data",
             "heure" => "07:58",
             "status" => "Present",
-            "date" => "20/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 12,
@@ -308,7 +308,7 @@ function presencesDisplay()
             "referenciel" => "Ref-Dig",
             "heure" => "07:30",
             "status" => "Present",
-            "date" => "19/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 12,
@@ -319,7 +319,7 @@ function presencesDisplay()
             "referenciel" => "Ref-Dig",
             "heure" => "08:00",
             "status" => "Present",
-            "date" => "20/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 12,
@@ -330,7 +330,7 @@ function presencesDisplay()
             "referenciel" => "Ref-Dig",
             "heure" => "08:20",
             "status" => "Retard",
-            "date" => "20/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 12,
@@ -341,7 +341,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Web",
             "heure" => "07:18",
             "status" => "Present",
-            "date" => "20/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 12,
@@ -352,7 +352,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Web",
             "heure" => "vide",
             "status" => "Absent",
-            "date" => "19/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 12,
@@ -363,7 +363,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Data",
             "heure" => "07:58",
             "status" => "Present",
-            "date" => "19/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 12,
@@ -374,7 +374,7 @@ function presencesDisplay()
             "referenciel" => "Ref-Dig",
             "heure" => "07:30",
             "status" => "Present",
-            "date" => "19/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 12,
@@ -385,7 +385,7 @@ function presencesDisplay()
             "referenciel" => "Ref-Dig",
             "heure" => "08:00",
             "status" => "Present",
-            "date" => "18/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 12,
@@ -396,7 +396,7 @@ function presencesDisplay()
             "referenciel" => "Ref-Dig",
             "heure" => "08:20",
             "status" => "Retard",
-            "date" => "18/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 12,
@@ -407,7 +407,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Web",
             "heure" => "07:18",
             "status" => "Present",
-            "date" => "18/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 12,
@@ -418,7 +418,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Web",
             "heure" => "vide",
             "status" => "Absent",
-            "date" => "18/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 12,
@@ -429,7 +429,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Data",
             "heure" => "07:58",
             "status" => "Present",
-            "date" => "18/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 12,
@@ -440,7 +440,7 @@ function presencesDisplay()
             "referenciel" => "Ref-Dig",
             "heure" => "07:30",
             "status" => "Present",
-            "date" => "18/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 12,
@@ -451,7 +451,7 @@ function presencesDisplay()
             "referenciel" => "Ref-Dig",
             "heure" => "08:00",
             "status" => "Present",
-            "date" => "18/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 12,
@@ -462,7 +462,7 @@ function presencesDisplay()
             "referenciel" => "Ref-Dig",
             "heure" => "08:20",
             "status" => "Retard",
-            "date" => "18/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 12,
@@ -595,7 +595,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Data",
             "heure" => "09:10",
             "status" => "Present",
-            "date" => "20/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 6,
@@ -606,7 +606,7 @@ function presencesDisplay()
             "referenciel" => "Ref-Dig",
             "heure" => "08:20",
             "status" => "Present",
-            "date" => "20/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 5,
@@ -661,7 +661,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Web",
             "heure" => "07:10",
             "status" => "Present",
-            "date" => "20/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 12,
@@ -672,7 +672,7 @@ function presencesDisplay()
             "referenciel" => "Ref-Dig",
             "heure" => "07:30",
             "status" => "Present",
-            "date" => "20/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 13,
@@ -683,7 +683,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Data",
             "heure" => "07:55",
             "status" => "Present",
-            "date" => "20/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 10,
@@ -694,7 +694,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Web",
             "heure" => "-",
             "status" => "Absent",
-            "date" => "20/04/2024",
+            "date" => "21/04/2024",
         ],
         [
             "matricule" => 11,

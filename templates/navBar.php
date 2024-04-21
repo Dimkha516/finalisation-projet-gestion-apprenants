@@ -2,6 +2,10 @@
 
 <?php
 $date_actuelle = date("d/m/Y");
+session_start();
+if(isset($_SESSION['connectedUser'])){
+    $connectedUser = $_SESSION['connectedUser'];
+}
 ?>
 
 <div class="contain-top">
@@ -30,9 +34,10 @@ $date_actuelle = date("d/m/Y");
             
         </img>
         <div class="current-user">
-            <h3 style="color: teal;">SUPER_ADMIN</h3>
+            <h3 style="color: teal;">User</h3>
             <select>
-                <option value="adm">Admin Admin</option>
+                <?php echo "<option value='adm'>". $connectedUser["nom"] ."</option>" ?>
+                <!-- <option value="adm">Admin Admin</option> -->
             </select>
         </div>
     </div>
