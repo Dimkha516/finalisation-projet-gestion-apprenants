@@ -33,7 +33,7 @@
         <div class="active-page">
             <div>
                 <h5 class="promotion">Présences</h5> <br>
-                <?php echo "<h2>Connected: " . $connectedUser["nom"] . "</h2>" ?>
+                <?php echo "<h2>Connected: " . $connectedUser["nom"]." (".$connectedUser['profil'].")"  ."</h2>" ?>
             </div>
             <div>
                 <?php echo "<h2 class='runningPromo'>Promo: " . $active . "</h2>" ?>
