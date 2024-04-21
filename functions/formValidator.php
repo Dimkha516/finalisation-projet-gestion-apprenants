@@ -1,7 +1,7 @@
 <?php
 // 
 function testValidator($email, $password)
-{   session_start();
+{   
     $usersFile = file_get_contents("../Data/users.json");
     $usersFileArray = json_decode($usersFile, true);
 
@@ -9,9 +9,9 @@ function testValidator($email, $password)
     $emailError = "Email invalide";
     $passError = "Passe invalide";
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo ($emailError);
+        // echo ($emailError);
     } elseif (strlen($password) != 4) {
-        echo ($passError);
+        // echo ($passError);
     } else {
         // $cryptedPass = password_hash($password, PASSWORD_DEFAULT);
         // $password = $cryptedPass;
@@ -27,17 +27,24 @@ function testValidator($email, $password)
                 $foundedUser = $user;
                 break;
             }
-            
         }
         if ($foundedUser !== null) {
-            if(isset($_SESSION['connectedUser'])){
-                $_SESSION['connectedUser'] = $foundedUser;
-                $connectedUser = ($_SESSION['connectedUser']);
-                header('Refresh: 2; url=../public/index.php'); 
-            } else{
-                echo "Session inconnue ou expirée";
-            }
-        } 
+            session_start();
+            $_SESSION['connectedUser'] = $foundedUser;
+            var_dump($_SESSION['connectedUser']);
+            header('Refresh: 2; url=../public/index.php'); 
+
+            // if(isset($_SESSION['connectedUser'])){
+            //     $_SESSION['connectedUser'] = $foundedUser;
+            //     $connectedUser = ($_SESSION['connectedUser']);
+                
+            //     var_dump($connectedUser);
+                
+            // } 
+        }
+        else{
+             echo "Utilisateur inconnu";
+            } 
 
 
     }
