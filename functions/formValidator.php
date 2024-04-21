@@ -27,9 +27,7 @@ function testValidator($email, $password)
                 $foundedUser = $user;
                 break;
             }
-            //  else {
-            //     echo ("Utilisateur inconnu");
-            // }
+            
         }
         if ($foundedUser !== null) {
             if(isset($_SESSION['connectedUser'])){
@@ -37,7 +35,7 @@ function testValidator($email, $password)
                 $connectedUser = ($_SESSION['connectedUser']);
                 header('Refresh: 2; url=../public/index.php'); 
             } else{
-                echo "Session inconnue";
+                echo "Session inconnue ou expirée";
             }
         } 
 

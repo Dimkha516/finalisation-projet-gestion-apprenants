@@ -4,7 +4,7 @@ include_once("formValidator.php");
 
 if ($_SERVER['REQUEST_METHOD']=='POST'){
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $password = $_POST['password']; 
 }
 
 testValidator($email,$password);
