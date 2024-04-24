@@ -42,24 +42,25 @@ function testValidator($email, $password)
 
             if ($user['email'] == $userInfos['mail'] && $user['freePass'] == $userInfos['pass']) {
                 // var_dump($user['freePass']);
-                $_SESSION['global-error'] = "";
                 $foundedUser = $user;
+                // $_SESSION['global-error'] = "";
                 // break;
 
                 // if ($foundedUser !== null) {
-                    session_start();
-                    $_SESSION['connectedUser'] = $foundedUser;
-                    if ($foundedUser['profil'] == 'apprenant') {
-                        header('Refresh: 1; url=../public/index.php?page=presences');
-                    } else {
-                        header('Refresh:1; url=../public/index.php?page=promos');
-                    }
+                session_start();
+                $_SESSION['connectedUser'] = $foundedUser;
+                if ($foundedUser['profil'] == 'apprenant') {
+                    header('Refresh: 1; url=../public/index.php?page=presences');
+                } else {
+                    header('Refresh:1; url=../public/index.php?page=promos');
+                }
+                $_SESSION['global-error'] = "";
                 // }
-            }
-            else{
+            } else {
                 $_SESSION['global-error'] = "Email ou mot de passe invalide";
             }
         }
+
 
     }
 
