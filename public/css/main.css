@@ -1059,8 +1059,11 @@ label{
 }
 
 .error{
-    background-color: pink;
-    font-size: 1.7rem;
+    color: tomato;
+    font-size: 2rem;
+    font-weight: 900;
+    transform: translateX(1.2px);
+    transition: 2s;
     margin: 10px;
     height: 6vh;
     text-align: center;
@@ -1117,4 +1120,11 @@ label{
     padding: 7px;
     border: none;
     cursor: pointer;
+}
+
+.emailError, .passError{
+    color: tomato;
+    font-size: 2rem;
+    font-weight: 900;
+    transition: 3s ease-in;
 }

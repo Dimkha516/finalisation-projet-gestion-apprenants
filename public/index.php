@@ -8,24 +8,22 @@ $showNavBar = true;
 
 // APPEL DE BAR DE NAVIGATION:
 $showNavBar ? include_once("../templates/navBar.php") : "";
+// $showNavBar ? include("../templates/navBar.php") : "";
 // include_once("../templates/navBar.php");
 
 // RECUPERATION REQUÊTE PAGE:
-$currentPage = isset($_GET["page"]) ? ($_GET["page"]) : 'presences';
+$currentPage = isset($_GET["page"]) ? ($_GET["page"]) : 'login';
 include_once "../templates/" . $currentPage . ".php"; 
 
 
 if ($currentPage == 'login') {
-    // $showFooter = false;
     $showSideBar = false;
-    // $showNavBar = false; 
-}
-if ($currentPage == 'login') {
     $showFooter = false;
-}
-if ($currentPage == 'login') {
     $showNavBar = false;
 }
+ 
+
+
 
  
 // RETOUR DE LA PAGE DEMANDÉE:
@@ -33,7 +31,7 @@ if ($currentPage == 'login') {
 
 $showSideBar ? include_once("../templates/sideBar.php") : "";
 // include_once("../templates/sideBar.php");
- 
+
 // APPEL PIED DE PAGE
 $showFooter ? include_once("../templates/footer.php") : "";
 // include("../templates/footer.php");

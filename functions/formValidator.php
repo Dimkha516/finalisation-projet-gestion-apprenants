@@ -1,17 +1,32 @@
 <?php
+
+session_start();
+$_SESSION['global-error'] = '';
+$_SESSION['email-error'] = '';
+$_SESSION['pass-error'] = '';
 // 
 function testValidator($email, $password)
 {   
     $usersFile = file_get_contents("../Data/users.json");
     $usersFileArray = json_decode($usersFile, true);
-
+    
     //1°)---------------------------VÉRIFIER SI EMAIL EST VALIDE ET LONGUEUR PASSWORD SUPÉRIEURE A 4
+    $globalError = "Email et Mot de passe Recquis";
     $emailError = "Email invalide";
-    $passError = "Passe invalide";
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        // echo ($emailError);
+    $passError = "Le mot de passe doit faire 4 chiffres";
+    
+    if($email == null && $password == null){
+        if(isset($_SESSION["global-error"])){
+            $_SESSION["global-error"] = $globalError;
+        }
+    }
+    
+    elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        if(isset($_SESSION['email-error'])){
+            $_SESSION['email-error'] = $emailError;
+        }
     } elseif (strlen($password) != 4) {
-        // echo ($passError);
+        $_SESSION['pass-error'] = $passError;
     } else {
         // $cryptedPass = password_hash($password, PASSWORD_DEFAULT);
         // $password = $cryptedPass;
@@ -31,20 +46,19 @@ function testValidator($email, $password)
         if ($foundedUser !== null) {
             session_start();
             $_SESSION['connectedUser'] = $foundedUser;
-            var_dump($_SESSION['connectedUser']);
-            header('Refresh: 2; url=../public/index.php'); 
+            // var_dump($_SESSION['connectedUser']);
+            header('Refresh: 2; url=../public/index.php?page=promos');
 
             // if(isset($_SESSION['connectedUser'])){
             //     $_SESSION['connectedUser'] = $foundedUser;
             //     $connectedUser = ($_SESSION['connectedUser']);
-                
+
             //     var_dump($connectedUser);
-                
+
             // } 
+        } else {
+            echo "Utilisateur inconnu";
         }
-        else{
-             echo "Utilisateur inconnu";
-            } 
 
 
     }

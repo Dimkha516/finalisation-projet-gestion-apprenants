@@ -2,18 +2,27 @@
 
 session_start();
 
+// RECUPÉRATION DE LA PROMO ACTIVÉE COMME SESSION:
 if (isset($_SESSION['activePromo'])) {
     $promoActive = $_SESSION['activePromo'];
 }
 
-$refTarget = "";
+// if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//     $DevWeb = isset($_POST['Dev-Web']) ? $_POST['Dev-Web'] :'';
+//     $DevData = isset($_POST['Dev-Data']) ? $_POST['Dev-Data'] :'';
+//     $RefDig = isset($_POST['Ref-Dig']) ? $_POST['Ref-Dig'] :'';
+// }
 
+
+// STOCKAGE DE LA VALEUR DU RÉFÉRENTIEL CHOISI:
+$refTarget = "";
 if ($_SERVER["REQUEST_METHOD"] = "GET") {
     if (isset($_GET["value"])) {
         $refTarget = $_GET["value"];
         $_SESSION['refTarget'] = $refTarget;
     }
 }
+
 
 
 // Load the CSV file
@@ -35,6 +44,7 @@ if (($handle = fopen($filename, 'r')) !== FALSE) {
             // Insérer les ref de la promo active  
             $refTab[] = $row;
             $associativeArray[$row[1]] = $row[2];
+            // var_dump($associativeArray);
         }
         // else {
         //     echo("Erreur parcours");
@@ -87,7 +97,47 @@ echo "</div>";
 
 echo "</div>";
 
+function refCheckBox()
+{
+    session_start();
+    // RECUPÉRATION DE LA PROMO ACTIVÉE COMME SESSION:
+    if (isset($_SESSION['activePromo'])) {
+        $promoActive = $_SESSION['activePromo'];
+    }
 
+    $filename = '../Data/referentiels.csv';
+$refTab = [];
+$associativeArray = [];
+
+if (($handle = fopen($filename, 'r')) !== FALSE) {
+    // Skip the header row
+    fgetcsv($handle);
+
+
+    // Parcours des lignes
+    while (($row = fgetcsv($handle, 1000, ',')) !== FALSE) {
+
+        // vérifier si idRéf égal à promo-active
+        if ($row[0] == $promoActive && $row[2] == 'active') {
+
+            // Insérer les ref de la promo active  
+            $refTab[] = $row;
+            $associativeArray[$row[1]] = $row[2];
+            // var_dump($associativeArray);
+        }
+        // else {
+        //     echo("Erreur parcours");
+        // }
+    }
+    fclose($handle);
+}
+
+foreach($associativeArray as $filiere => $value) {
+    echo '<p>'. $filiere .' '. $value .'</p>';
+}
+ 
+
+}
 
 
 

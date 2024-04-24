@@ -6,25 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/css/main.css">
     <title>Document</title>
+
 </head>
 
 <body>
 
+    <!-- TEST DE SESSION POUR STOCKAGE REF CHECKÉ -->
+
+    <!-- FIN TEST DE SESSION POUR STOCKAGE REF CHECKÉ -->
+
+
     <?php
     session_start();
+    // 
     if (isset($_SESSION["activePromo"])) {
         $activedPromo = $_SESSION["activePromo"];
     }
-
+    // 
     if (isset($_SESSION["nbApprenants"])) {
         $nombreApprenants = $_SESSION["nbApprenants"];
     }
-    if (isset($_SESSION["activePromo"])) {
-        $activedPromo = $_SESSION["activePromo"];
-    }
-    $valueRef = $_GET['value'];
     ?>
 
+<!-- L'aventure est dangreuse la routine est mortel -->
 
     <!-- <link rel="stylesheet" href="../public/css/main.css"> -->
     <div class="promo6">
@@ -41,17 +45,13 @@
             </div>
 
             <div class="top2-3">
-                <form method="post">
-                    <label for="Dev-Web">Dev-web</label>
-                    <input type="checkbox" name="Dev-Web" id="Dev-Web" class="refCheck" value="Dev-Web">
-
-                    <label for="Dev-Data">Dev-data</label>
-                    <input type="checkbox" name="Dev-Data" id="Dev-Data" class="refCheck" value="Dev-Data"> <br>
-
-                    <label for="Ref-Dig">Ref-dig</label>
-                    <input type="checkbox" name="Ref-Dig" id="Ref-Dig" class="refCheck" value="Ref-Dig">
-
-                <!-- </form> -->
+                
+                <form method="post" id="refForm" class="refForm">
+                <!-- action="index.php?page=utilisateurs" -->
+                    <!-- <label for="Dev-Web">Dev-web</label>
+                -->
+                    <input type="checkbox" name="checkedRef[]" id="Dev-Web" class="refCheck" value="Dev-Web" onchange="this.form.submit()">
+                </form>
             </div>
 
         </div>
@@ -68,6 +68,7 @@
             <div class="head2">
                 <div class="nombre-apprenants">
                     <h3>Apprenants</h3>
+
                     <?php
                     echo "<h2 style='color: teal;'>" . "(" . $nombreApprenants . ")" . "</h2>";
 
@@ -117,8 +118,32 @@
             </div>
         </div>
 
+        <?php require_once ("../functions/gestionPromos.php") ?>
     </div>
-    <?php require_once ("../functions/gestionPromos.php") ?>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#Dev-Web').change(function () {
+                // Empêcher le formulaire d'être soumis normalement
+                event.preventDefault();
+
+                // Soumettre le formulaire en utilisant AJAX
+                $.ajax({
+                    type: 'POST',
+                    url: '../functions/gestionPromos.php', // URL du script de traitement du formulaire
+                    data: $('#refForm').serialize(), // Données du formulaire
+                    success: function (response) {
+                        // Traiter la réponse du serveur
+                        console.log(response);
+                    },
+                    error: function (error) {
+                        // Gérer les erreurs
+                        console.log(error);
+                    }
+                });
+            });
+        });
+    </script> -->
 </body>
 
 </html>

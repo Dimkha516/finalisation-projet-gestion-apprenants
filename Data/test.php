@@ -262,3 +262,27 @@ if($foundedUser){
 } else {
     echo("Non");
 }
+
+
+//-----------------------------------------------------------------------
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+    $DevWeb = isset($_POST['Dev-Web']) ? $_POST['Dev-Web'] : '';
+    $DevData = isset($_POST['Dev-Data']) ? $_POST['Dev-Data'] : '';
+    $RefDig = isset($_POST['Ref-Dig']) ? $_POST['Ref-Dig'] : '';
+}
+
+
+// <form method="post" class="refForm">
+//     <label for="Dev-Web">Dev-Web</label>
+//     <input type="checkbox" name="Dev-Web" id="Dev-Web" class="refCheck" value="Dev-Web">
+
+//     <label for="Dev-Data">Dev-Data</label>
+//     <input type="checkbox" name="Dev-Data" id="Dev-Data" class="refCheck" value="Dev-Data"> <br>
+
+//     <label for="Ref-Dig">Ref-Dig</label>
+//     <input type="checkbox" name="Ref-Dig" id="Ref-Dig" class="refCheck" value="Ref-Dig">
+
+//     <input type="submit" name="submit" value="Submit">
+
+
+//-----------------------------------------------------------------------

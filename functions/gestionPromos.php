@@ -3,6 +3,8 @@
 //------------------------CE FICHIER SERT A AFFICHER LES LA LISTE DES ÉTUDIANTS DE LA PROMO ACTIVÉE:
 
 session_start();
+
+
 if (isset($_SESSION["activePromo"])) {
     $activedPromo = $_SESSION["activePromo"];
 }
@@ -15,6 +17,38 @@ $valeurRefMin = strtolower($valueRef);
 // Déclarer le tableau de stockage des référentiels:
 $tabRef = [];
 array_push($tabRef, $valueRef);
+
+
+// if (isset($_POST['Dev-Web'])) {
+//     $_SESSION['Dev-Web'] = $_POST['Dev-Web'];
+//     $DevWeb = $_SESSION['Dev-Web'];
+//     if($DevWeb != $valueRef){
+//         array_push($tabRef, $DevWeb);
+//     }
+// }
+
+// if (isset($_SESSION['Dev-Data'])) {
+//     $DevData = $_SESSION['Dev-Data'];
+//     // unset($_SESSION['Dev-Data']);
+//     $DevData !== $valueRef ? array_push($tabRef, $DevData) : "";
+// }
+// if (isset($_SESSION['Dev-Web'])) {
+//     $DevWeb = $_SESSION['Dev-Web'];
+//     $DevWeb !== $valueRef ? array_push($tabRef, $DevWeb) : "";
+// }
+// if (isset($_SESSION['Ref-Dig'])) {
+//     $RefDig = $_SESSION['Ref-Dig'];
+// $RefDig !== $valueRef ? array_push($tabRef, $RefDig) : "";
+// }
+
+
+
+
+//------------------------------------------------
+
+
+
+// -------------------------------------------------
 
 // Mettre tous les éléments du tableau en minuscule:
 // $tabRefMin = array_map('strtolower', $tabRef);
@@ -252,20 +286,20 @@ $apprenants = [
 ];
 
 // 
-$searchedRef = $_POST["nomRef"];
-$foundedRef = null;
-$tabEtud = [$valueRef];
-foreach ($apprenants as $apprenant) {
-    if ($apprenant['referentiel'] == $searchedRef) {
-        $tabEtud[] = $apprenant;
-        $foundedRef = $apprenant;
-        break;
-    }
-}
-session_start();
+// $searchedRef = $_POST["nomRef"];
+// $foundedRef = null;
+// $tabEtud = [$valueRef];
+// foreach ($apprenants as $apprenant) {
+//     if ($apprenant['referentiel'] == $searchedRef) {
+//         $tabEtud[] = $apprenant;
+//         $foundedRef = $apprenant;
+//         break;
+//     }
+// }
 $_SESSION['nbApprenants'] = count($apprenants);
 echo "<div class='global'>";
 
+// var_dump()
 
 if (!empty(($valueRef))) {
     foreach ($apprenants as $apprenant) {
@@ -291,21 +325,23 @@ if (!empty(($valueRef))) {
     }
 } else {
     foreach ($apprenants as $apprenant) {
-        echo "<div class='infos-promos'>";
-        echo "<ul>";
-        echo "<li class='donnees1'>";
-        echo "<img class='profilEtudiant' src=" . $apprenant['profil'] . ">";
-        // echo "<img src='../public/images/tete.png' class='profilEtudiant' alt='profil'>";
-        echo "<p class='nomEtudiant' style='font-size:1.2rem'>" . $apprenant['nom'] . "</p>";
-        echo "<p class='prenomEtudiant' style='font-size:1.2rem'>" . $apprenant['prenom'] . "</p>";
-        echo "<p class='refEtudiant' style='font-size:1.2rem'>" . $apprenant['referentiel'] . "</p>";
-        echo "<p class='emailEtudiant' style='font-size:1.2rem'>" . $apprenant['email'] . "</p>";
-        echo "<p class='genreEtudiant' style='font-size:1.2rem'>" . $apprenant['genre'] . "</p>";
-        echo "<p class='telEtudiant' style='font-size:1.2rem'>" . $apprenant['tel'] . "</p>";
-        echo "<input type='checkbox' class='action'></input>";
-        echo "</li>";
-        echo "</ul>";
-        echo "</div>";
+        if ($apprenant['promo'] == $activedPromo)    {
+            echo "<div class='infos-promos'>";
+            echo "<ul>";
+            echo "<li class='donnees1'>";
+            echo "<img class='profilEtudiant' src=" . $apprenant['profil'] . ">";
+            // echo "<img src='../public/images/tete.png' class='profilEtudiant' alt='profil'>";
+            echo "<p class='nomEtudiant' style='font-size:1.2rem'>" . $apprenant['nom'] . "</p>";
+            echo "<p class='prenomEtudiant' style='font-size:1.2rem'>" . $apprenant['prenom'] . "</p>";
+            echo "<p class='refEtudiant' style='font-size:1.2rem'>" . $apprenant['referentiel'] . "</p>";
+            echo "<p class='emailEtudiant' style='font-size:1.2rem'>" . $apprenant['email'] . "</p>";
+            echo "<p class='genreEtudiant' style='font-size:1.2rem'>" . $apprenant['genre'] . "</p>";
+            echo "<p class='telEtudiant' style='font-size:1.2rem'>" . $apprenant['tel'] . "</p>";
+            echo "<input type='checkbox' class='action'></input>";
+            echo "</li>";
+            echo "</ul>";
+            echo "</div>";
+        }
 
     }
 }
