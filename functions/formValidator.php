@@ -47,18 +47,21 @@ function testValidator($email, $password)
                 // break;
 
                 // if ($foundedUser !== null) {
-                session_start();
+
                 $_SESSION['connectedUser'] = $foundedUser;
                 if ($foundedUser['profil'] == 'apprenant') {
+                    $_SESSION['activePromo'] = $foundedUser['promo'];
+                    // var_dump($_SESSION['activePromo']);
                     header('Refresh: 1; url=../public/index.php?page=presences');
                 } else {
                     header('Refresh:1; url=../public/index.php?page=promos');
                 }
                 $_SESSION['global-error'] = "";
-                // }
+                break;
             } else {
                 $_SESSION['global-error'] = "Email ou mot de passe invalide";
             }
+            // break;
         }
 
 

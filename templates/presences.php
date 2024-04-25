@@ -12,9 +12,8 @@
     <!-- http://www.bamba.mbow:8089/architecture/templates/presences.php -->
 
 
-    <?php require_once ("../functions/gestionPresences.php") ?>
-
-    <?php session_start();
+    <?php require_once ("../functions/gestionPresences.php");
+    session_start();
 
     if (isset($_SESSION["activePromo"])) {
         $active = $_SESSION["activePromo"];
@@ -33,7 +32,7 @@
         <div class="active-page">
             <div>
                 <h5 class="promotion">Présences</h5> <br>
-                <?php echo "<h2>Connected: " . $connectedUser["nom"]." (".$connectedUser['profil'].")"  ."</h2>" ?>
+                <?php echo "<h2>Connected: " . $connectedUser["nom"] . " (" . $connectedUser['profil'] . ")" . "</h2>" ?>
             </div>
             <div>
                 <?php echo "<h2 class='runningPromo'>Promo: " . $active . "</h2>" ?>
@@ -58,14 +57,18 @@
                         </select>
                     </div>
 
-                    <div>
-                        <select class="referentiel" name="optionsRef" id="optionsRef">
-                            <option value="">Référentiel</option>
-                            <option value="Dev-Web">Dev-Web</option>
-                            <option value="Ref-Dig">Ref-Dig</option>
-                            <option value="Dev-Data">Dev-Data</option>
-                        </select>
-                    </div>
+                    <?php
+                    if ($connectedUser['profil'] !== 'apprenant') {
+                        echo "<div>";
+                        echo "<select class='referentiel' name='optionsRef' id='optionsRef'>";
+                        echo "<option value=''>Reférentiel</option>";
+                        echo "<option value='Dev-Web'>Dev-Web</option>";
+                        echo "<option value='Ref-Dig'>Ref-Dig</option>";
+                        echo "<option value='Dev-Data'>Dev-Data</option>";
+                        echo "</select>";
+                        echo "</div>";
+                    }
+                    ?>
 
 
 

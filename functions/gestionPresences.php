@@ -6,9 +6,18 @@
 function presencesDisplay()
 {
     session_start();
+    // STOCKAGE DE LA PROMO ACTIVE:
     if (isset($_SESSION["activePromo"])) {
-        $actived = $_SESSION["activePromo"];
+        $actived = $_SESSION['activePromo'];
     }
+
+    if (isset($_SESSION['connectedUser'])) {
+        $connectedUser = $_SESSION['connectedUser'];
+    }
+
+
+    // STOCKAGE DE L'UTILISATEUR CONNECTÉ POUR PERSONNALISER LES PAGES
+    // is(isset($_SESSION['connectedUser'])){}
 
     $date_actuelle = date('d/m/Y');
 
@@ -24,6 +33,52 @@ function presencesDisplay()
             "status" => "Present",
             "date" => "19/04/2024",
         ],
+        // CONNECTED APPRENANTS:
+        [
+            "matricule" => 300,
+            "nom" => "Baba",
+            "prenom" => "Ro",
+            "phone" => 776699665,
+            "promo" => 6,
+            "referenciel" => "Dev-Web",
+            "heure" => "08:00",
+            "status" => "Present",
+            "date" => "25/04/2024",
+        ],
+        [
+            "matricule" => 300,
+            "nom" => "Baba",
+            "prenom" => "Ro",
+            "phone" => 776699665,
+            "promo" => 6,
+            "referenciel" => "Dev-Web",
+            "heure" => "08:00",
+            "status" => "Present",
+            "date" => "26/04/2024",
+        ],
+        [
+            "matricule" => 300,
+            "nom" => "Baba",
+            "prenom" => "Ro",
+            "phone" => 776699665,
+            "promo" => 6,
+            "referenciel" => "Dev-Web",
+            "heure" => "vide",
+            "status" => "Absent",
+            "date" => "27/04/2024",
+        ],
+        [
+            "matricule" => 300,
+            "nom" => "Baba",
+            "prenom" => "Ro",
+            "phone" => 776699665,
+            "promo" => 6,
+            "referenciel" => "Dev-Web",
+            "heure" => "08:50",
+            "status" => "Retard",
+            "date" => "28/04/2024",
+        ],
+        // 
         [
             "matricule" => 2,
             "nom" => "Sall",
@@ -88,7 +143,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Web",
             "heure" => "07:40",
             "status" => "Present",
-            "date" => "24/04/2024",
+            "date" => "25/04/2024",
         ],
         [
             "matricule" => 8,
@@ -99,7 +154,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Data",
             "heure" => "08:40",
             "status" => "Retard",
-            "date" => "24/04/2024",
+            "date" => "25/04/2024",
         ],
         [
             "matricule" => 9,
@@ -110,7 +165,7 @@ function presencesDisplay()
             "referenciel" => "Ref-Dig",
             "heure" => "08:05",
             "status" => "Present",
-            "date" => "24/04/2024",
+            "date" => "25/04/2024",
         ],
         [
             "matricule" => 10,
@@ -121,7 +176,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Web",
             "heure" => "vide",
             "status" => "Absent",
-            "date" => "24/04/2024",
+            "date" => "25/04/2024",
         ],
         [
             "matricule" => 11,
@@ -132,7 +187,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Web",
             "heure" => "07:10",
             "status" => "Present",
-            "date" => "24/04/2024",
+            "date" => "25/04/2024",
         ],
         [
             "matricule" => 12,
@@ -143,7 +198,7 @@ function presencesDisplay()
             "referenciel" => "Ref-Dig",
             "heure" => "07:30",
             "status" => "Present",
-            "date" => "24/04/2024",
+            "date" => "25/04/2024",
         ],
         [
             "matricule" => 13,
@@ -154,7 +209,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Data",
             "heure" => "07:55",
             "status" => "Present",
-            "date" => "24/04/2024",
+            "date" => "25/04/2024",
         ],
         [
             "matricule" => 10,
@@ -165,7 +220,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Web",
             "heure" => "-",
             "status" => "Absent",
-            "date" => "24/04/2024",
+            "date" => "25/04/2024",
         ],
         [
             "matricule" => 11,
@@ -176,7 +231,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Web",
             "heure" => "07:10",
             "status" => "Present",
-            "date" => "24/04/2024",
+            "date" => "25/04/2024",
         ],
         [
             "matricule" => 12,
@@ -187,7 +242,7 @@ function presencesDisplay()
             "referenciel" => "Ref-Dig",
             "heure" => "07:30",
             "status" => "Present",
-            "date" => "24/04/2024",
+            "date" => "25/04/2024",
         ],
         [
             "matricule" => 13,
@@ -198,7 +253,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Data",
             "heure" => "07:55",
             "status" => "Present",
-            "date" => "24/04/2024",
+            "date" => "25/04/2024",
         ],
         [
             "matricule" => 130,
@@ -209,7 +264,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Data",
             "heure" => "07:55",
             "status" => "Absent",
-            "date" => "24/04/2024",
+            "date" => "25/04/2024",
         ],
         [
             "matricule" => 13,
@@ -220,7 +275,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Data",
             "heure" => "07:55",
             "status" => "Retard",
-            "date" => "24/04/2024",
+            "date" => "25/04/2024",
         ],
         [
             "matricule" => 11,
@@ -231,7 +286,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Web",
             "heure" => "07:10",
             "status" => "Present",
-            "date" => "24/04/2024",
+            "date" => "25/04/2024",
         ],
         [
             "matricule" => 12,
@@ -242,7 +297,7 @@ function presencesDisplay()
             "referenciel" => "Ref-Dig",
             "heure" => "07:30",
             "status" => "Present",
-            "date" => "24/04/2024",
+            "date" => "25/04/2024",
         ],
         [
             "matricule" => 12,
@@ -253,7 +308,7 @@ function presencesDisplay()
             "referenciel" => "Ref-Dig",
             "heure" => "08:00",
             "status" => "Present",
-            "date" => "24/04/2024",
+            "date" => "25/04/2024",
         ],
         [
             "matricule" => 12,
@@ -264,7 +319,7 @@ function presencesDisplay()
             "referenciel" => "Ref-Dig",
             "heure" => "08:20",
             "status" => "Retard",
-            "date" => "24/04/2024",
+            "date" => "25/04/2024",
         ],
         [
             "matricule" => 12,
@@ -275,7 +330,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Web",
             "heure" => "07:18",
             "status" => "Present",
-            "date" => "24/04/2024",
+            "date" => "25/04/2024",
         ],
         [
             "matricule" => 12,
@@ -286,7 +341,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Web",
             "heure" => "vide",
             "status" => "Absent",
-            "date" => "24/04/2024",
+            "date" => "25/04/2024",
         ],
         [
             "matricule" => 12,
@@ -297,7 +352,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Data",
             "heure" => "07:58",
             "status" => "Present",
-            "date" => "24/04/2024",
+            "date" => "25/04/2024",
         ],
         [
             "matricule" => 12,
@@ -308,7 +363,7 @@ function presencesDisplay()
             "referenciel" => "Ref-Dig",
             "heure" => "07:30",
             "status" => "Present",
-            "date" => "24/04/2024",
+            "date" => "25/04/2024",
         ],
         [
             "matricule" => 12,
@@ -319,7 +374,7 @@ function presencesDisplay()
             "referenciel" => "Ref-Dig",
             "heure" => "08:00",
             "status" => "Present",
-            "date" => "24/04/2024",
+            "date" => "25/04/2024",
         ],
         [
             "matricule" => 12,
@@ -330,7 +385,7 @@ function presencesDisplay()
             "referenciel" => "Ref-Dig",
             "heure" => "08:20",
             "status" => "Retard",
-            "date" => "24/04/2024",
+            "date" => "25/04/2024",
         ],
         [
             "matricule" => 12,
@@ -341,7 +396,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Web",
             "heure" => "07:18",
             "status" => "Present",
-            "date" => "24/04/2024",
+            "date" => "25/04/2024",
         ],
         [
             "matricule" => 12,
@@ -352,7 +407,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Web",
             "heure" => "vide",
             "status" => "Absent",
-            "date" => "24/04/2024",
+            "date" => "25/04/2024",
         ],
         [
             "matricule" => 12,
@@ -363,7 +418,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Data",
             "heure" => "07:58",
             "status" => "Present",
-            "date" => "24/04/2024",
+            "date" => "25/04/2024",
         ],
         [
             "matricule" => 12,
@@ -374,7 +429,7 @@ function presencesDisplay()
             "referenciel" => "Ref-Dig",
             "heure" => "07:30",
             "status" => "Present",
-            "date" => "24/04/2024",
+            "date" => "25/04/2024",
         ],
         [
             "matricule" => 12,
@@ -385,7 +440,7 @@ function presencesDisplay()
             "referenciel" => "Ref-Dig",
             "heure" => "08:00",
             "status" => "Present",
-            "date" => "24/04/2024",
+            "date" => "25/04/2024",
         ],
         [
             "matricule" => 12,
@@ -396,7 +451,7 @@ function presencesDisplay()
             "referenciel" => "Ref-Dig",
             "heure" => "08:20",
             "status" => "Retard",
-            "date" => "24/04/2024",
+            "date" => "25/04/2024",
         ],
         [
             "matricule" => 12,
@@ -407,7 +462,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Web",
             "heure" => "07:18",
             "status" => "Present",
-            "date" => "24/04/2024",
+            "date" => "25/04/2024",
         ],
         [
             "matricule" => 12,
@@ -418,7 +473,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Web",
             "heure" => "vide",
             "status" => "Absent",
-            "date" => "24/04/2024",
+            "date" => "25/04/2024",
         ],
         [
             "matricule" => 12,
@@ -429,7 +484,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Data",
             "heure" => "07:58",
             "status" => "Present",
-            "date" => "24/04/2024",
+            "date" => "25/04/2024",
         ],
         [
             "matricule" => 12,
@@ -440,7 +495,7 @@ function presencesDisplay()
             "referenciel" => "Ref-Dig",
             "heure" => "07:30",
             "status" => "Present",
-            "date" => "24/04/2024",
+            "date" => "25/04/2024",
         ],
         [
             "matricule" => 12,
@@ -451,7 +506,7 @@ function presencesDisplay()
             "referenciel" => "Ref-Dig",
             "heure" => "08:00",
             "status" => "Present",
-            "date" => "24/04/2024",
+            "date" => "25/04/2024",
         ],
         [
             "matricule" => 12,
@@ -462,7 +517,7 @@ function presencesDisplay()
             "referenciel" => "Ref-Dig",
             "heure" => "08:20",
             "status" => "Retard",
-            "date" => "24/04/2024",
+            "date" => "25/04/2024",
         ],
         [
             "matricule" => 12,
@@ -837,7 +892,7 @@ function presencesDisplay()
             "referenciel" => "Dev-Data",
             "heure" => "07:55",
             "status" => "Present",
-            "date" => "20/04/2024", 
+            "date" => "20/04/2024",
         ],
     ];
 
@@ -875,183 +930,228 @@ function presencesDisplay()
     echo "<div class='tables'>";
     echo "<table>";
 
-    /*******************************************RECHERCHE PAR MATRICULE**********************/
-    if ($foundedMatricule != null && $foundedMatricule['promo'] == $actived) {
-        echo "<tr class='tabRow'>";
-        echo "<td class='matric'>" . $foundedMatricule['matricule'] . "</td>";
-        echo "<td class='prenom'>" . $foundedMatricule['prenom'] . "</td>";
-        echo "<td class='nom'>" . $foundedMatricule['nom'] . "</td>";
-        echo "<td class='phone'>" . $foundedMatricule['phone'] . "</td>";
-        echo "<td class='promo'>" . $foundedMatricule['promo'] . '</td>';
-        echo "<td class='ref'>" . $foundedMatricule['referenciel'] . "</td>"; 
-        echo "<td class='heure'>" . $foundedMatricule['heure'] . "</td>";
-        echo "<td class='stat'>" . $foundedMatricule['status'] . "</td>";
-        echo "</tr>";
-    }
 
-    /*******************************************FILTRE PAR STATUS/REFERENTIEL/DATE**********************/ else if
-    ($selectedStatus != null && $selectedRef != null && $selectedDay != null) {
-        foreach ($etud as $val) {
-            if ($val['status'] == $selectedStatus && $val['referenciel'] == $selectedRef && $val['date'] == $date_actuelle) {
-                echo "<tr class='tabRow'>";
-                echo "<td class='matric'>" . $val['matricule'] . "</td>";
-                echo "<td class='prenom'>" . $val['prenom'] . "</td>";
-                echo "<td class='nom'>" . $val['nom'] . "</td>";
-                echo "<td class='phone'>" . $val['phone'] . "</td>";
-                echo "<td class='promo'>" . $val['promo'] . '</td>';
-                echo "<td class='ref'>" . $val['referenciel'] . "</td>";
-                echo "<td class='heure'>" . $val['heure'] . "</td>";
-                echo "<td class='stat'>" . $val['status'] . "</td>";
-                echo "</tr>";
-            }
-        }
-    }
+    //--------------------AFFICHAGE DES DONNÉES SI USER APPPRENANT--------------------------------------------:
 
-    /*******************************************FILTRE PAR STATUS/REFERENTIEL**********************/ else if
-    ($selectedStatus != null && $selectedRef != null) {
-        foreach ($etud as $val) {
-            if ($val['status'] == $selectedStatus && $val['referenciel'] == $selectedRef && $val['date'] == $date_actuelle) {
-                echo "<tr class='tabRow'>";
-                echo "<td class='matric'>" . $val['matricule'] . "</td>";
-                echo "<td class='prenom'>" . $val['prenom'] . "</td>";
-                echo "<td class='nom'>" . $val['nom'] . "</td>";
-                echo "<td class='phone'>" . $val['phone'] . "</td>";
-                echo "<td class='promo'>" . $val['promo'] . '</td>';
-                echo "<td class='ref'>" . $val['referenciel'] . "</td>";
-                echo "<td class='heure'>" . $val['heure'] . "</td>";
-                echo "<td class='stat'>" . $val['status'] . "</td>"; 
-                echo "</tr>";
-            }
-        }
-    }
-
-    /*******************************************FILTRE PAR STATUS/DATE**********************/ else if
-    ($selectedStatus != null && $selectedDay != null) {
-        foreach ($etud as $val) {
-            if ($val['status'] == $selectedStatus && $val['date'] == $selectedDay) {
-                echo "<tr class='tabRow'>";
-                echo "<td class='matric'>" . $val['matricule'] . "</td>";
-                echo "<td class='prenom'>" . $val['prenom'] . "</td>";
-                echo "<td class='nom'>" . $val['nom'] . "</td>";
-                echo "<td class='phone'>" . $val['phone'] . "</td>";
-                echo "<td class='promo'>" . $val['promo'] . '</td>';
-                echo "<td class='ref'>" . $val['referenciel'] . "</td>";
-                echo "<td class='heure'>" . $val['heure'] . "</td>";
-                echo "<td class='stat'>" . $val['status'] . "</td>";
-                echo "</tr>";
-            }
-        }
-    }
+    if ($connectedUser['profil'] == 'apprenant') {
 
 
-
-
-    /*******************************************FILTRE PAR STATUS**********************/ else if ($selectedStatus != null) {
-        foreach ($etud as $val) {
-            if ($val["status"] == $selectedStatus && $val['promo'] == $actived) {
-                echo "<tr class='tabRow'>";
-                echo "<td class='matric'>" . $val['matricule'] . "</td>";
-                echo "<td class='prenom'>" . $val['prenom'] . "</td>";
-                echo "<td class='nom'>" . $val['nom'] . "</td>";
-                echo "<td class='phone'>" . $val['phone'] . "</td>";
-                echo "<td class='promo'>" . $val['promo'] . '</td>';
-                echo "<td class='ref'>" . $val['referenciel'] . "</td>";
-                echo "<td class='heure'>" . $val['heure'] . "</td>";
-                echo "<td class='stat'>" . $val['status'] . "</td>";
-                echo "</tr>";
-            }
-        }
-    }
-
-
-
-    /*******************************************FILTRE PAR RÉRÉRENTIEL**********************/ else if ($selectedRef != null) {
-        foreach ($etud as $val) {
-            if ($val['referenciel'] == $selectedRef && $val['promo'] == $actived && $val['date'] == $date_actuelle) {
-                echo "<tr class='tabRow'>";
-                echo "<td class='matric'>" . $val['matricule'] . "</td>";
-                echo "<td class='prenom'>" . $val['prenom'] . "</td>";
-                echo "<td class='nom'>" . $val['nom'] . "</td>";
-                echo "<td class='phone'>" . $val['phone'] . "</td>";
-                echo "<td class='promo'>" . $val['promo'] . '</td>';
-                echo "<td class='ref'>" . $val['referenciel'] . "</td>";
-                echo "<td class='heure'>" . $val['heure'] . "</td>";
-                echo "<td class='stat'>" . $val['status'] . "</td>";
-                echo "</tr>";
-            }
-        }
-    }
-
-    /*******************************************FILTRE PAR DATE**********************/ else if ($selectedDay != null) {
-        foreach ($etud as $val) {
-            if ($val['date'] == $selectedDay && $val['promo'] == $actived) {
-                echo "<tr class='tabRow'>";
-                echo "<td class='matric'>" . $val['matricule'] . "</td>";
-                echo "<td class='prenom'>" . $val['prenom'] . "</td>";
-                echo "<td class='nom'>" . $val['nom'] . "</td>";
-                echo "<td class='phone'>" . $val['phone'] . "</td>";
-                echo "<td class='promo'>" . $val['promo'] . '</td>';
-                echo "<td class='ref'>" . $val['referenciel'] . "</td>";
-                echo "<td class='heure'>" . $val['heure'] . "</td>";
-                echo "<td class='stat'>" . $val['status'] . "</td>";
-               
-                echo "</tr>";
-            }
-        }
-    }
-
-
-
-
-    /*******************************************AFFICHAGE DE BASE SANS FILTRE**********************/ else
-        if ($date_actuelle != null) {
-
+        if ($selectedStatus != null) {
             foreach ($etud as $val) {
-                if ($val['date'] == $date_actuelle && $val['promo'] == $actived) {
+                if ($val["status"] == $selectedStatus && $val['promo'] == $actived && $connectedUser['matricule'] == $val['matricule']) {
                     echo "<tr class='tabRow'>";
                     echo "<td class='matric'>" . $val['matricule'] . "</td>";
-                    echo "<td class='nom'>" . $val['nom'] . "</td>";
                     echo "<td class='prenom'>" . $val['prenom'] . "</td>";
+                    echo "<td class='nom'>" . $val['nom'] . "</td>";
                     echo "<td class='phone'>" . $val['phone'] . "</td>";
                     echo "<td class='promo'>" . $val['promo'] . '</td>';
                     echo "<td class='ref'>" . $val['referenciel'] . "</td>";
                     echo "<td class='heure'>" . $val['heure'] . "</td>";
                     echo "<td class='stat'>" . $val['status'] . "</td>";
-                    // echo "<td class='dt'>". $val["date"] . "</td>";
+                    echo "</tr>";
+                }
+            }
+        } else if ($selectedDay != null) {
+            foreach ($etud as $val) {
+                if ($val['date'] == $selectedDay && $val['promo'] == $actived && $connectedUser['matricule'] = $val['matricule']) {
+                    echo "<tr class='tabRow'>";
+                    echo "<td class='matric'>" . $val['matricule'] . "</td>";
+                    echo "<td class='prenom'>" . $val['prenom'] . "</td>";
+                    echo "<td class='nom'>" . $val['nom'] . "</td>";
+                    echo "<td class='phone'>" . $val['phone'] . "</td>";
+                    echo "<td class='promo'>" . $val['promo'] . '</td>';
+                    echo "<td class='ref'>" . $val['referenciel'] . "</td>";
+                    echo "<td class='heure'>" . $val['heure'] . "</td>";
+                    echo "<td class='stat'>" . $val['status'] . "</td>";
+
                     echo "</tr>";
                 }
             }
         } else {
-            echo ("AUCUNE DONNÉE AUJOUDH'HUI");
+
+            if ($date_actuelle != null) {
+
+                foreach ($etud as $val) {
+                    if ($val['date'] == $date_actuelle && $val['promo'] == $actived && $connectedUser['matricule'] == $val['matricule']) {
+                        echo "<tr class='tabRow'>";
+                        echo "<td class='matric'>" . $val['matricule'] . "</td>";
+                        echo "<td class='nom'>" . $val['nom'] . "</td>";
+                        echo "<td class='prenom'>" . $val['prenom'] . "</td>";
+                        echo "<td class='phone'>" . $val['phone'] . "</td>";
+                        echo "<td class='promo'>" . $val['promo'] . '</td>';
+                        echo "<td class='ref'>" . $val['referenciel'] . "</td>";
+                        echo "<td class='heure'>" . $val['heure'] . "</td>";
+                        echo "<td class='stat'>" . $val['status'] . "</td>";
+                        // echo "<td class='dt'>". $val["date"] . "</td>";
+                        echo "</tr>";
+                    }
+                }
+            }
         }
-    echo "</table>";
-    echo "</div>";
 
-}
-
-function presencesDisplay2()
-{
-    session_start();
-    if (isset($_SESSION["activePromo"])) {
-        $actived = $_SESSION["activePromo"];
+        echo "</table>";
+        echo "</div>";
     }
 
-    $date_actuelle = date('d/m/Y');
 
-    $presenceFile = "../Data/presences.csv";
 
-    $presenceFile = fopen($presenceFile, "r");
 
-    $fileHeaders = fgetcsv($presenceFile);
 
-    $presencesTab = [];
 
-    while (($ligne = fgetcsv($presenceFile)) !== false) {
-        if (count($ligne) == count($fileHeaders)) {
-            $presencesTab[] = array_combine($fileHeaders, $ligne);
+    //--------------------AFFICHAGE DES DONNÉES SI USER ADMIN--------------------------------------------:
+    else {
+        /*******************************************RECHERCHE PAR MATRICULE**********************/
+        if ($foundedMatricule != null && $foundedMatricule['promo'] == $actived) {
+            echo "<tr class='tabRow'>";
+            echo "<td class='matric'>" . $foundedMatricule['matricule'] . "</td>";
+            echo "<td class='prenom'>" . $foundedMatricule['prenom'] . "</td>";
+            echo "<td class='nom'>" . $foundedMatricule['nom'] . "</td>";
+            echo "<td class='phone'>" . $foundedMatricule['phone'] . "</td>";
+            echo "<td class='promo'>" . $foundedMatricule['promo'] . '</td>';
+            echo "<td class='ref'>" . $foundedMatricule['referenciel'] . "</td>";
+            echo "<td class='heure'>" . $foundedMatricule['heure'] . "</td>";
+            echo "<td class='stat'>" . $foundedMatricule['status'] . "</td>";
+            echo "</tr>";
         }
+
+        /*******************************************FILTRE PAR STATUS/REFERENTIEL/DATE**********************/ else if
+        ($selectedStatus != null && $selectedRef != null && $selectedDay != null) {
+            foreach ($etud as $val) {
+                if ($val['status'] == $selectedStatus && $val['referenciel'] == $selectedRef && $val['date'] == $date_actuelle) {
+                    echo "<tr class='tabRow'>";
+                    echo "<td class='matric'>" . $val['matricule'] . "</td>";
+                    echo "<td class='prenom'>" . $val['prenom'] . "</td>";
+                    echo "<td class='nom'>" . $val['nom'] . "</td>";
+                    echo "<td class='phone'>" . $val['phone'] . "</td>";
+                    echo "<td class='promo'>" . $val['promo'] . '</td>';
+                    echo "<td class='ref'>" . $val['referenciel'] . "</td>";
+                    echo "<td class='heure'>" . $val['heure'] . "</td>";
+                    echo "<td class='stat'>" . $val['status'] . "</td>";
+                    echo "</tr>";
+                }
+            }
+        }
+
+        /*******************************************FILTRE PAR STATUS/REFERENTIEL**********************/ else if
+        ($selectedStatus != null && $selectedRef != null) {
+            foreach ($etud as $val) {
+                if ($val['status'] == $selectedStatus && $val['referenciel'] == $selectedRef && $val['date'] == $date_actuelle) {
+                    echo "<tr class='tabRow'>";
+                    echo "<td class='matric'>" . $val['matricule'] . "</td>";
+                    echo "<td class='prenom'>" . $val['prenom'] . "</td>";
+                    echo "<td class='nom'>" . $val['nom'] . "</td>";
+                    echo "<td class='phone'>" . $val['phone'] . "</td>";
+                    echo "<td class='promo'>" . $val['promo'] . '</td>';
+                    echo "<td class='ref'>" . $val['referenciel'] . "</td>";
+                    echo "<td class='heure'>" . $val['heure'] . "</td>";
+                    echo "<td class='stat'>" . $val['status'] . "</td>";
+                    echo "</tr>";
+                }
+            }
+        }
+
+        /*******************************************FILTRE PAR STATUS/DATE**********************/ else if
+        ($selectedStatus != null && $selectedDay != null) {
+            foreach ($etud as $val) {
+                if ($val['status'] == $selectedStatus && $val['date'] == $selectedDay) {
+                    echo "<tr class='tabRow'>";
+                    echo "<td class='matric'>" . $val['matricule'] . "</td>";
+                    echo "<td class='prenom'>" . $val['prenom'] . "</td>";
+                    echo "<td class='nom'>" . $val['nom'] . "</td>";
+                    echo "<td class='phone'>" . $val['phone'] . "</td>";
+                    echo "<td class='promo'>" . $val['promo'] . '</td>';
+                    echo "<td class='ref'>" . $val['referenciel'] . "</td>";
+                    echo "<td class='heure'>" . $val['heure'] . "</td>";
+                    echo "<td class='stat'>" . $val['status'] . "</td>";
+                    echo "</tr>";
+                }
+            }
+        }
+
+
+
+
+        /*******************************************FILTRE PAR STATUS**********************/ else if ($selectedStatus != null) {
+            foreach ($etud as $val) {
+                if ($val["status"] == $selectedStatus && $val['promo'] == $actived) {
+                    echo "<tr class='tabRow'>";
+                    echo "<td class='matric'>" . $val['matricule'] . "</td>";
+                    echo "<td class='prenom'>" . $val['prenom'] . "</td>";
+                    echo "<td class='nom'>" . $val['nom'] . "</td>";
+                    echo "<td class='phone'>" . $val['phone'] . "</td>";
+                    echo "<td class='promo'>" . $val['promo'] . '</td>';
+                    echo "<td class='ref'>" . $val['referenciel'] . "</td>";
+                    echo "<td class='heure'>" . $val['heure'] . "</td>";
+                    echo "<td class='stat'>" . $val['status'] . "</td>";
+                    echo "</tr>";
+                }
+            }
+        }
+
+
+
+        /*******************************************FILTRE PAR RÉRÉRENTIEL**********************/ else if ($selectedRef != null) {
+            foreach ($etud as $val) {
+                if ($val['referenciel'] == $selectedRef && $val['promo'] == $actived && $val['date'] == $date_actuelle) {
+                    echo "<tr class='tabRow'>";
+                    echo "<td class='matric'>" . $val['matricule'] . "</td>";
+                    echo "<td class='prenom'>" . $val['prenom'] . "</td>";
+                    echo "<td class='nom'>" . $val['nom'] . "</td>";
+                    echo "<td class='phone'>" . $val['phone'] . "</td>";
+                    echo "<td class='promo'>" . $val['promo'] . '</td>';
+                    echo "<td class='ref'>" . $val['referenciel'] . "</td>";
+                    echo "<td class='heure'>" . $val['heure'] . "</td>";
+                    echo "<td class='stat'>" . $val['status'] . "</td>";
+                    echo "</tr>";
+                }
+            }
+        }
+
+        /*******************************************FILTRE PAR DATE**********************/ else if ($selectedDay != null) {
+            foreach ($etud as $val) {
+                if ($val['date'] == $selectedDay && $val['promo'] == $actived) {
+                    echo "<tr class='tabRow'>";
+                    echo "<td class='matric'>" . $val['matricule'] . "</td>";
+                    echo "<td class='prenom'>" . $val['prenom'] . "</td>";
+                    echo "<td class='nom'>" . $val['nom'] . "</td>";
+                    echo "<td class='phone'>" . $val['phone'] . "</td>";
+                    echo "<td class='promo'>" . $val['promo'] . '</td>';
+                    echo "<td class='ref'>" . $val['referenciel'] . "</td>";
+                    echo "<td class='heure'>" . $val['heure'] . "</td>";
+                    echo "<td class='stat'>" . $val['status'] . "</td>";
+
+                    echo "</tr>";
+                }
+            }
+        }
+
+
+
+
+        /*******************************************AFFICHAGE DE BASE SANS FILTRE**********************/ else
+            if ($date_actuelle != null) {
+
+                foreach ($etud as $val) {
+                    if ($val['date'] == $date_actuelle && $val['promo'] == $actived) {
+                        echo "<tr class='tabRow'>";
+                        echo "<td class='matric'>" . $val['matricule'] . "</td>";
+                        echo "<td class='nom'>" . $val['nom'] . "</td>";
+                        echo "<td class='prenom'>" . $val['prenom'] . "</td>";
+                        echo "<td class='phone'>" . $val['phone'] . "</td>";
+                        echo "<td class='promo'>" . $val['promo'] . '</td>';
+                        echo "<td class='ref'>" . $val['referenciel'] . "</td>";
+                        echo "<td class='heure'>" . $val['heure'] . "</td>";
+                        echo "<td class='stat'>" . $val['status'] . "</td>";
+                        // echo "<td class='dt'>". $val["date"] . "</td>";
+                        echo "</tr>";
+                    }
+                }
+            } else {
+                echo ("AUCUNE DONNÉE AUJOUDH'HUI");
+            }
+        echo "</table>";
+        echo "</div>";
     }
-    fclose($presenceFile);
 
 }
 

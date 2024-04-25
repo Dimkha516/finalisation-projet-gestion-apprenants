@@ -3,9 +3,6 @@ session_start();
 if (isset($_SESSION['connectedUser'])) {
     $connectedUser = $_SESSION['connectedUser'];
 
-// if(isset($_SESSION['activePromo'])) {
-//     $_SESSION['activePromo'] = $connectedUser['promo'];
-// }
 }
 ?>
 

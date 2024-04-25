@@ -1,4 +1,7 @@
 <?php
+session_start();
+$_SESSION['activePromo'];
+// $_SESSION['activePromo'] = 6;
 // http://localhost:8089/architecture/public/index.php
 //include("../models/login.php");
 
@@ -37,7 +40,14 @@ $showFooter ? include_once("../templates/footer.php") : "";
 // include("../templates/footer.php");
 
 
-
+// if($currentPage == "presences" || $currentPage == "evenements") {
+//     if(isset($_SESSION["connectedUser"])){
+//         $connectedUser = $_SESSION["connectedUser"];
+//         if($connectedUser['profil']=='apprenant'){
+//             $_SESSION['activePromo'] = $connectedUser['promo'];
+//         }
+//     }
+// }
 
 
 

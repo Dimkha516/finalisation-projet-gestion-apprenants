@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 
 //FONCTION UTILISÉE EN PREMIER 
 
@@ -31,18 +33,28 @@ fclose($file);
 //---------------------------------------------------------------AFFICHAGE DES DONNÉES DU TABLEAU:
 $stockedVal = "";
 
-session_start();
 // $_SESSION['activePromo'] = 6;
 
-if ($_SERVER["REQUEST_METHOD"] = "POST") {
-    if (isset($_POST["promo"])) {
-        $stockedVal = $_POST['promo'];
-        $_SESSION['activePromo'] = $stockedVal;
-        // header('Location: autre-page.php');
-        // exit();
+if (!isset($_SESSION["activePromo"])) {
+    $_SESSION['activePromo'] = 6;
+} else {
+    if ($_SERVER['REQUEST_METHOD'] = 'POST') {
+        if (isset($_POST['promo'])) {
+            $_SESSION['activePromo'] = $_POST['promo'];
+            $stockedVal = $_SESSION['activePromo'];
+        }
     }
-
 }
+
+// if ($_SERVER["REQUEST_METHOD"] = "POST") {
+//     if (isset($_POST["promo"])) {
+//         $stockedVal = $_POST['promo'];
+//         $_SESSION['activePromo'] = $stockedVal;
+//         // header('Location: autre-page.php');
+//         // exit();
+//     }
+
+// }
 
 echo '<form method="post" id="promoForm">';
 $first = true;
@@ -74,8 +86,8 @@ foreach (array_slice($data, $debut, $elements_par_page) as $promotion) {
     // }
 
     if ($first) {
-        echo "<input type='radio' class='promo-radio' name='promo' value='$promotion[id]' checked>";
         $first = false;
+        echo "<input type='radio' class='promo-radio' name='promo' value='$promotion[id]' checked>";
     } elseif (isset($_SESSION["activePromo"]) && $_SESSION["activePromo"] == $promotion['id']) {
         echo "<input type='radio' class='promo-radio' name='promo' value='$promotion[id]' checked>";
     } else {

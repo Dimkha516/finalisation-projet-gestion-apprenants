@@ -1,5 +1,6 @@
 {
     "66250d3eb4f74": {
+        "matricule": 125,
         "nom": "Mister",
         "email": "mister@example.com",
         "pass": "$2y$12$eScS6tpQ1ZVcAopccuwccOJsMLFkbSAWLRaCNvUXLpyu\/XsBL\/eMK",
@@ -10,6 +11,7 @@
         "image": "..\/public\/images\/icon1.png"
     },
     "66250d520e81d": {
+        "matricule": 125,
         "nom": "Miss",
         "email": "miss@example.com",
         "pass": "$2y$12$Rom6PMT7dCUVzmd2xRxwcu4VcxnUq9hY.ofQmCaDnp0z8Pp1koQ0u",
@@ -20,6 +22,7 @@
         "image": "..\/public\/images\/icon1.png"
     },
     "66250d71a5536": {
+        "matricule": 300,
         "nom": "Baba",
         "email": "baba@example.com",
         "pass": "$2y$12$lLtf9BYD63TkQX9FLlMGtep2NnXNjJ7Zt0ryvxcbUdm6BXl5RnQ4S",
@@ -31,7 +34,7 @@
     },
     "66250d8442b51": {
         "nom": "Baba",
-        "email": "baba@example.com",
+        "email": "baba2@example.com",
         "pass": "$2y$12$VyonYdMgceRvzAazVK3hb.bxqy30xoqyC1qh2VYhcH3b8xkNHKjRG",
         "freePass": 1234,
         "profil": "apprenant",
@@ -41,41 +44,41 @@
     },
     "66250d9987066": {
         "nom": "Baba",
-        "email": "baba@example.com",
+        "email": "baba3@example.com",
         "pass": "$2y$12$BE84YqjPldkJrTs\/JcwWSeB6uyzBRk.L4NLNtnFrkliG9hL8utj76",
         "freePass": 1234,
         "profil": "apprenant",
-        "promo": 5,
+        "promo": 4,
         "referentiel": "Dev-Data",
         "image": "..\/public\/images\/icon1.png"
     },
     "66250da6ad9cc": {
         "nom": "Baba",
-        "email": "baba@example.com",
+        "email": "baba4@example.com",
         "pass": "$2y$12$TEB7QKkX47TW93IXIH8hh.rv9cxy9UmM8yrhb6uh5DvqVXgqUbD4S",
         "freePass": 1234,
         "profil": "apprenant",
-        "promo": 6,
+        "promo": 3,
         "referentiel": "Ref-Dig",
         "image": "..\/public\/images\/icon1.png"
     },
     "66250daec2879": {
         "nom": "Baba",
-        "email": "baba@example.com",
+        "email": "baba5@example.com",
         "pass": "$2y$12$T14MHzVQa.qsAM9sgWgX9.rnA02ScLaTTb20v0xdkH0\/dxKN74WIi",
         "freePass": 1234,
         "profil": "apprenant",
-        "promo": 5,
+        "promo": 2,
         "referentiel": "Ref-Dig",
         "image": "..\/public\/images\/icon1.png"
     },
     "66250db73a1ff": {
         "nom": "Baba",
-        "email": "baba@example.com",
+        "email": "baba6@example.com",
         "pass": "$2y$12$APLesq99\/pssKm56j13kP.QDDFAjSD1UE7b\/ZzuQ9xcrwn4NnScgi",
         "freePass": 1234,
         "profil": "apprenant",
-        "promo": 5,
+        "promo": 1,
         "referentiel": "Dev-Data",
         "image": "..\/public\/images\/icon1.png"
     } 
